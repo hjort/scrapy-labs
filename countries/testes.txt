@@ -1,0 +1,9 @@
+scrapy shell 'https://www.cia.gov/the-world-factbook/countries/brazil/'
+
+divgeo = response.xpath('//div[@id="geography"]/div')
+
+divgeo.xpath('//h3/a/text()').getall()
+
+divgeo.xpath('//div/p/text()[contains(.,"arable")]').get()
+
+divgeo.xpath('//div/p/*/text()[contains(.,"forest")]').get()
